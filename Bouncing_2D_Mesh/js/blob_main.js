@@ -2,12 +2,9 @@
 window.onload = init;
 
 const FLATNESS = 0.001;
-const gravity = 0.005;
-
-
-
-
-const bounce_factor = -0.6;
+const MIN_VELOCITY = .01;
+const gravity = 0.001;
+const bounce_factor = -0.8;
 const inside_color = [COLOR_YELLOW, COLOR_BLACK];
 const outside_color = [COLOR_BLUE, COLOR_WHITE];
 var color_index = 0;
@@ -131,8 +128,8 @@ function mouseDown(event) {
     start.x = mouse.x;
     start.y = mouse.y;
 
-    console.log("start x " + start.x);
-    console.log("start y " + start.y);
+   // console.log("start x " + start.x);
+   // console.log("start y " + start.y);
 }
 
 function mouseUp(event) {
@@ -208,8 +205,6 @@ function keyDown(event) {
     blob.rad = rad;
     blob.color_index = color_index;
 
-    //blob_world.init_blob_world();
-    //render();
 }
 
 function convertToWebGLCoords(mouse) {
